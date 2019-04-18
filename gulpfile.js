@@ -52,6 +52,8 @@ gulp.task('templates', function() {
     pipe( livereload( server ));
 });
 
+gulp.task('build', ['css', 'images', 'templates', 'js']);
+
 gulp.task('express', function() {
   app.use(express.static(path.resolve('./dist')));
   app.listen(1337);
